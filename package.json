@@ -75,12 +75,13 @@
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
-    "extends": "react-app",
+    "extends": [
+      "react-app",
+      "airbnb"
+    ],
     "rules": {
-      "semi": [
-        "error",
-        "always"
-      ]
+      "react/jsx-filename-extension": 0,
+      "react/jsx-one-expression-per-line": 0
     }
   },
   "browserslist": {
@@ -151,5 +152,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
   }
 }
