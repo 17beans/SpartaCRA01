@@ -1,0 +1,45 @@
+serve -s build는 yarn build, yarn eject 이후에 실행해야 404 오류가 뜨지 않음
+
+ESLint is disabled since its execution has not been approved or denied yet. Use the light bulb menu to open the approval dialog.
+위와 같은 오류가 vscode에서 출력될 경우 빨간 줄이 그어진 곳에 보면 파란 전구가 있다. 클릭하고 Allow 해줄 것
+
+'React' must be in scope when using JSX
+위와 같은 오류가 vscode에서 출력될 경우 아래 행을 추가해줄 것
+import React from 'react';
+
+eslint로 문법 경고 수정하는 법
+f1키 누르고 'fix'를 검색하면 "ESLint: Fix all auto-fixable Problem"가 출력되는데 이를 클릭하면 자동으로 고쳐줌
+
+문법 경고 단축키 설정하는 법
+1. f1키 누르고 'fix'를 검색하면 "ESLint: Fix all auto-fixable Problem"가 출력되는데 오른쪽 톱니바퀴 아이콘을 클릭
+2. 목록의 "ESLint: Fix all auto-fixable Problem" 좌측 + 버튼 클릭하고 원하는 단축키 지정
+
+git hook 관련하여 Husky 설치하기
+https://www.huskyhoochu.com/npm-husky-the-git-hook-manager/
+https://amorfati0310.github.io/learning-note/elint-prettier-lint-staged.html
+package.json에 아래 코드 추가
+,
+  "husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+  }
+
+git hook 관련하여 lint-staged 설치하기
+https://www.huskyhoochu.com/how-to-use-lint-staged/
+https://amorfati0310.github.io/learning-note/elint-prettier-lint-staged.html
+package.json에 아래 코드 추가
+,
+  "lint-staged": {
+    "*.{js,vue}": [
+        "eslint --fix",
+        "prettier --write",
+        "git add"
+    ]
+  }
+
+git collaborator란
+https://hyoje420.tistory.com/41
+
+
+
