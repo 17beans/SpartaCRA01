@@ -1,0 +1,2 @@
+serve -s build는 yarn build, yarn eject 이후에 실행해야 404 오류가 뜨지 않음
+
