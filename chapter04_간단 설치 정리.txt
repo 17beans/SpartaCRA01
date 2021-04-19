@@ -4,7 +4,7 @@ yarn add eslint-config-airbnb
 
 //package.json
 "eslintConfig": {
-    "extends": ["react-app","airbnb"],
+    "extends": ["react-app", "airbnb", "prettier"],
     "rules": {
       "react/jsx-filename-extension": 0,
       "react/jsx-one-expression-per-line": 0
