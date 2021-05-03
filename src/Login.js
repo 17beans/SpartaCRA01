@@ -55,6 +55,7 @@ export default function Login() {
     console.log("로그인 시도");
     if (id === "17kbeans" && pw === "qwer") {
       setLogin(true);
+      alert("로그인 되었습니다");
     } else {
       console.log("id: " + id);
       console.log("pw: " + pw);

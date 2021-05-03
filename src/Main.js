@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import "./App.css";
 import TodoList from "./TodoList";
 
@@ -120,8 +120,19 @@ export default function Main(props) {
 
     setTodoList(todoList.filter((td) => td._id !== idx));
   };
-
   const todoListInputRef = useRef();
+  let cnt = 0;
+  // const [boardCnt, setBoardCnt] = useState(0);
+  const cntBoard = () => {
+    for (let i = 0; i < todoList.length; i++) {
+      cnt += 1;
+    }
+    return <p>보드 수: {cnt}</p>;
+  };
+  // const cntBoard = useCallback(() => {
+  //   setBoardCnt(todoList.length);
+  //   return <p>보드 수: {boardCnt}</p>;
+  // }, [boardCnt]);
 
   return (
     <div style={wrap}>
@@ -150,6 +161,10 @@ export default function Main(props) {
           placeholder="보드 제목을 입력하세요"
           onKeyPress={inputPress}
         ></input>
+        <div style={{ lineHeight: 2, marginLeft: 20 }}>
+          {/* 보드 수: {todoList.length} */}
+          {cntBoard()}
+        </div>
       </div>
       <div style={itemContainer}>
         {todoList.map((td, i) => {
